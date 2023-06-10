@@ -5,6 +5,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #e7f6ff;
 }
+
+button,
+input {
+  font-family: system-ui, "Inter";
+}
+
 // шрифты я закинул в индекс.html в папке паблик
 a {
   text-decoration: none;
@@ -71,12 +77,23 @@ p {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+.card:hover {
+  /* Rectangle 19 */
+
+  box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.08);
+  transform: translateY(-5px);
+
+  // Это получается при наведение на карточку, будет подниматься на 5пх в верх
+}
+
 .card {
   margin-top: 40px;
   border: 4px solid #d2c9c9;
   padding: 30px;
   width: 160px;
   border-radius: 40px;
+  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
 
   span {
     font-size: 13px;
@@ -89,6 +106,11 @@ p {
   }
 }
 
+.favourite {
+  display: block;
+  position: absolute;
+  cursor: pointer;
+}
 .card h5 {
   margin: 0;
   font-weight: 400;
@@ -115,4 +137,145 @@ p {
   height: 32px;
   width: 32px;
   cursor: pointer;
+}
+.content_search_block {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+.search-block {
+  border-radius: 10px;
+  border: 1px solid #f3f3f3;
+  padding: 0 15px;
+
+  input {
+    outline: 0;
+    border: 0;
+    padding: 10px;
+    font-size: 16px;
+    width: 200px;
+  }
+}
+.drawer {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 415px;
+  height: 100%;
+  right: 0;
+  background: #ffffff;
+  box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+  padding-left: 30px;
+  padding-right: 30px;
+
+  h2 {
+    margin: 0;
+    margin-top: 32px;
+  }
+  .items {
+    flex: 1;
+    overflow: auto;
+    margin-bottom: 30px;
+  }
+}
+
+.cartBlock_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  img {
+    cursor: pointer;
+  }
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.cartItem {
+  margin-top: 30px;
+  border: 1px solid #f3f3f3;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 20px;
+  p {
+    font-size: 16px;
+  }
+  b {
+    font-size: 14px;
+  }
+}
+
+.CartItemImg {
+  margin-right: 20px;
+}
+.cartItemP {
+  margin-bottom: 5px;
+}
+.removeBtn {
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+}
+.removeBtn:hover {
+  opacity: 1;
+}
+
+.cartTotalCart {
+  div {
+    flex: 1;
+    height: 1px;
+    border-bottom: 1px dashed #dfdfdf;
+    position: relative;
+    top: -4px;
+    margin: 0 7px;
+  }
+  li {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-end;
+  }
+}
+.greenButton {
+  position: relative;
+  width: 100%;
+  height: 55px;
+  background: #9dd558;
+  border-radius: 18px;
+  border: 0;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-bottom: 20px;
+  margin-top: 20px;
+
+  img {
+    position: absolute;
+    right: 70px;
+    top: 20px;
+    transition: transform 0.1s ease-in-out;
+  }
+  &:hover {
+    img {
+      transform: translateX(10px);
+    }
+  }
+}
+
+.greenButton:hover {
+  background: lighten($color: #9dd558, $amount: 5%);
+}
+
+.items {
+  flex: 1;
 }

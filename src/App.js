@@ -1,30 +1,29 @@
+import Card from "./components/Card";
+import Header from "./components/Header";
+import Drawer from "./components/Drawer";
 function App() {
   return (
     <div className="wrapper">
-      <header className="header">
-        <div className="headerLeft">
-          <img width={40} height={40} src="/img/logo.png" />
-          <div className="headerInfo">
-            <h3>React Sneakers</h3>
-            <p>Shop of the best shoes</p>
+      <Drawer />
+      <Header />
+      <div className="content">
+        <div className="content_search_block">
+          <h1>All shoes</h1>
+          <div className="search-block">
+            <img src="/img/sneakers/search.svg" alt="search" />
+            <input placeholder="Search..."></input>
           </div>
         </div>
-        <div>
-          <ul className="headerRight">
-            <li className="headerRightLi">
-              <img width={18} height={18} src="/img/cart.svg" />
-              <span>1205 pounds</span>
-            </li>
-            <li>
-              <img width={20} height={20} src="/img/user.svg" />
-            </li>
-          </ul>
-        </div>
-      </header>
-      <div className="content">
-        <h1>All shoes</h1>
         <div className="sneakers">
-          <div className="card">
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+
+          {/* <div className="card">
+            <div className="favourite">
+              <img src="/img/heart-unlike.svg" alt="unliked" />
+            </div>
             <img
               width={133}
               height={112}
@@ -38,7 +37,7 @@ function App() {
                 <b>12 999 pound</b>
               </div>
               <button className="button">
-                <img width={11} height={11} src="/img/plus.svg"></img>
+                <img width={11} height={11} src="/img/plus.svg" alt="btn" />
               </button>
             </div>
           </div>
@@ -56,7 +55,7 @@ function App() {
                 <b>12 999 pound</b>
               </div>
               <button className="button">
-                <img width={11} height={11} src="/img/plus.svg"></img>
+                <img width={11} height={11} src="/img/plus.svg" alt="plus" />
               </button>
             </div>
           </div>
@@ -74,7 +73,7 @@ function App() {
                 <b>12 999 pound</b>
               </div>
               <button className="button">
-                <img width={11} height={11} src="/img/plus.svg"></img>
+                <img width={11} height={11} src="/img/plus.svg" alt="btn" />
               </button>
             </div>
           </div>
@@ -239,7 +238,7 @@ function App() {
                 <img width={11} height={11} src="/img/plus.svg"></img>
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
